@@ -7,12 +7,23 @@
 	</head>
 	<body>
 		<h1>COINCIDENCE</h1>
-		<form method="POST">{% csrf_token %}
-			{{form}}
-			<input type="submit" name="Check">
-		</form>
+		
 		<h3>
 			Similarity : {{sim}}
 		</h3>
+		<form method="POST">{% csrf_token %}
+			<div>
+			<p>
+			<label>{{form.cnt1.label}}</label><br>
+			{{form.cnt1}}
+			</p>
+
+			<p>
+			<label>{{form.cnt2.label}}</label><br>
+			{{form.cnt2}}
+			</p>
+			</div>
+			<input type="submit" name="Check">
+		</form>
 	</body>
 </html>

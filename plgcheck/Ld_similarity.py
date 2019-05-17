@@ -24,4 +24,4 @@ def Ld_similarity(a,b):
 
 	similarity = 1 - (lv_dist/max(len(a),len(b)))
 	
-	return similarity*100
+	return round(similarity*100, 2)
