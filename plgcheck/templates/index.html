@@ -1,11 +1,14 @@
+{% load static %}
+
 <html>
 	<head>
 		<title>Coincidence</title>
+		<link rel="stylesheet" href="{% static 'plgcheck/index.css' %}">
 	</head>
 	<body>
 		<h1>COINCIDENCE</h1>
 		<form method="POST">{% csrf_token %}
-			{{form.as_p}}
+			{{form}}
 			<input type="submit" name="Check">
 		</form>
 		<h3>
