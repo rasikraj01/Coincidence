@@ -6,8 +6,10 @@
 		<h1>COINCIDENCE</h1>
 		<form method="POST">{% csrf_token %}
 			{{form.as_p}}
-			<input type="submit" name="Check">	
+			<input type="submit" name="Check">
 		</form>
-		
+		<h3>
+			Similarity : {{sim}}
+		</h3>
 	</body>
 </html>
