@@ -1,9 +1,11 @@
-def lv(a,b):
+def Ld_similarity(a,b):
 	a_len = len(a)
 	b_len = len(b)
+	max_len = 10000
 	a = '#' + a
 	b = '#' + b
-	m = [[0 for x in range(a_len)] for y in range(b_len)] 
+	
+	m = [[0 for x in range(max_len)] for y in range(max_len)]
 
 	for i in range(0,a_len):
 		m[i][0] = i
@@ -17,18 +19,9 @@ def lv(a,b):
 				m[i][j] = m[i-1][j-1]
 			else:
 				m[i][j] = min(m[i-1][j]+1, m[i][j-1]+1, m[i-1][j-1]+1)
+	
+	lv_dist = m[a_len - 1][b_len - 1] +.00
 
-	# print(m)
-	return m[a_len - 1][b_len - 1]
-
-
-a = 'if not s: return len(t)'
-b = 'if not t: return len(s)'
-
-a = a.replace(' ',"")
-b = b.replace(' ',"")
-
-lv_dist = lv(a,b)
-similarity = 1 - (lv_dist/max(len(a),len(b)))
-
-print(similarity*100)
+	similarity = 1 - (lv_dist/max(len(a),len(b)))
+	
+	return similarity*100
